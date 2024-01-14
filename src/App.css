@@ -1,0 +1,16 @@
+body {
+  font-family: 'Li Halder Sourik Unicode';
+  background-color: #E5E8EF;
+}
+
+@font-face {
+  font-family: 'Li Halder Sourik Unicode';
+  src: local('Li Halder Sourik Unicode'), url(./fonts/Unicode/Li\Alinur\Akorshon\Unicode.ttf) format('ttf');
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: 'Li Halder Sourik';
+}

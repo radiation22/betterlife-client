@@ -1,0 +1,39 @@
+/* UpCome.css */
+.upcome-container {
+    /* Make the container the same width as its parent */
+    overflow: hidden;
+    /* Hide overflowing content */
+}
+
+.upcome-heading {
+    display: inline-block;
+    /* Make the heading inline-block to prevent it from breaking to the next line */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    animation: slideRightToLeft 25s linear infinite;
+    /* Adjust the animation duration as needed */
+}
+
+@keyframes slideRightToLeft {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .upcome-heading {
+        animation: slideRightToLeft 50s linear infinite;
+
+
+
+    }
+
+
+
+}

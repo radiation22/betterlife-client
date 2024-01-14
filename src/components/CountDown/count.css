@@ -1,0 +1,8 @@
+.rainbow {
+    background-image: url("../../assets/back1.png");
+    background-repeat: no-repeat;
+    width: 99%;
+    background-size: contain;
+    height: 120px;
+
+}

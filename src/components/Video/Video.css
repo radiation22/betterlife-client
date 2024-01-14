@@ -1,0 +1,103 @@
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+
+.video-section {
+    background-image: url("../../assets/videobg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+
+
+}
+
+/* Apply styles to the slider container */
+.slider {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    bottom: -130px;
+}
+
+/* Add a pseudo-element for the gradient overlay */
+.slider::before,
+.slider::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+/* Apply the animation and styles to the slide track */
+.slider .slide-track {
+    -webkit-animation: scroll 40s linear infinite;
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(30% * 14);
+    animation-play-state: running;
+    /* Initially, keep the animation running */
+}
+
+/* Define styles for each slide */
+.slide {
+    height: 500px;
+    width: 30%;
+    margin-right: 20px;
+
+
+}
+
+/* Pause the animation on hover */
+.slider:hover .slide-track {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.video-container {
+    box-shadow: rgba(0, 0, 0, 0.411) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+@media screen and (max-width: 480px) {
+
+    .slider .slide-track {
+        width: 100%;
+        width: calc(100% * 14);
+
+    }
+
+}

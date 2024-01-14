@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Li Shorif Jonota';
+
+}
+
+@font-face {
+  font-family: 'Li Shorif Jonota';
+  src: local('Li Shorif Jonota'), url(./fonts/ShorifJonotaUnicode.woff) format('woff');
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: 'Li Shorif Jonota';
+}

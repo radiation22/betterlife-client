@@ -1,0 +1,94 @@
+@-webkit-keyframes scrollv {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+@keyframes scrollv {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+
+
+/* Apply styles to the slider container */
+.sliderv {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Add a pseudo-element for the gradient overlay */
+.sliderv::before,
+.sliderv::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+.sliderv::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+
+.sliderv::before {
+    left: 0;
+    top: 0;
+}
+
+/* Apply the animation and styles to the slide track */
+.sliderv .slidev-track {
+    -webkit-animation: scrollv 40s linear infinite;
+    animation: scrollv 40s linear infinite;
+    display: flex;
+    width: calc(25% * 14);
+    animation-play-state: running;
+    /* Initially, keep the animation running */
+}
+
+/* Define styles for each slide */
+.slidev {
+
+    width: 25%;
+    margin-right: 20px;
+
+
+}
+
+/* Pause the animation on hover */
+.sliderv:hover .slidev-track {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@media screen and (max-width: 480px) {
+
+    .sliderv .slidev-track {
+        width: 100%;
+        width: calc(100% * 14);
+
+
+    }
+
+    .slidev {
+        margin-right: 2px;
+    }
+
+}
