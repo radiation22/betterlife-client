@@ -9,6 +9,7 @@ const Others = () => {
   const [userAnswers, setUserAnswers] = useState(Array(5).fill(null));
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+
   // Questions and options
   const questions = [
     {
@@ -42,6 +43,11 @@ const Others = () => {
       ],
     },
   ];
+
+  // Function to calculate the range width based on the current question
+  const calculateRangeWidth = () => {
+    return ((currentQuestion + 1) / questions.length) * 100 + "%";
+  };
 
   // Function to handle option selection
   const handleOptionSelect = (selectedOption) => {
@@ -113,31 +119,46 @@ const Others = () => {
         connection with. The following questions are designed to match you to a
         licensed therapist based on your therapy needs and personal preferences.
       </p>
-      <h2 className="text-2xl font-bold mt-8">
-        {questions[currentQuestion].question}
-      </h2>
-      <ul>
-        {questions[currentQuestion].options.map((option, index) => (
-          <li className="text-xl" key={index}>
-            <label>
-              <input
-                type="radio"
-                name="option"
-                value={option}
-                checked={userAnswers[currentQuestion] === option}
-                onChange={() => handleOptionSelect(option)}
-              />
-              {option}
-            </label>
-          </li>
-        ))}
-      </ul>
-      <button
-        className="px-6 py-1 text-white rounded-full mt-5 bg-[#1793CE]"
-        onClick={handleButtonClick}
-      >
-        {currentQuestion < questions.length - 1 ? "Next" : "Submit"}
-      </button>
+      <div className="border shadow-md rounded-md p-10 w-full mx-auto mt-10 md:w-[50%]">
+        {/* Progress Indicator */}
+        <div className="relative mb-5">
+          <div
+            className="h-2 bg-[#397A4A] rounded-full"
+            style={{ width: calculateRangeWidth() }}
+          ></div>
+        </div>
+
+        {/* Current Question */}
+        <h2 className="text-2xl font-bold mt-8">
+          {questions[currentQuestion].question}
+        </h2>
+
+        {/* Options */}
+        <ul>
+          {questions[currentQuestion].options.map((option, index) => (
+            <li className="text-xl" key={index}>
+              <label>
+                <input
+                  type="radio"
+                  name="option"
+                  value={option}
+                  checked={userAnswers[currentQuestion] === option}
+                  onChange={() => handleOptionSelect(option)}
+                />
+                {option}
+              </label>
+            </li>
+          ))}
+        </ul>
+
+        {/* Next/Submit Button */}
+        <button
+          className="px-6 py-1 text-white rounded-full w-full mt-5 bg-[#397A4A]"
+          onClick={handleButtonClick}
+        >
+          {currentQuestion < questions.length - 1 ? "Next" : "Submit"}
+        </button>
+      </div>
     </div>
   );
 };
