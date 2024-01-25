@@ -27,11 +27,7 @@ const Footer = () => {
             <div className="w-full">
               <div>
                 <div>
-                  <img
-                    className="mx-auto lg:mx-0 h-[120px]"
-                    src={logo}
-                    alt=""
-                  />
+                  <img className="mx-auto lg:mx-0 h-[80px]" src={logo} alt="" />
                 </div>
               </div>
             </div>
@@ -39,7 +35,7 @@ const Footer = () => {
             <div>
               <div className="w-full text-center md:text-left">
                 <span className="block uppercase text-white text-lg font-semibold mb-2">
-                  নিরাপদ
+                  বেটারলাইফ
                 </span>
                 <ul className="list-unstyled">
                   <Link to="/privacy">
@@ -124,7 +120,7 @@ const Footer = () => {
           <div className="flex flex-wrap items-center md:justify-between justify-center">
             <div className="w-full md:w-4/12 px-4 mx-auto text-center">
               <div className="text-sm text-white font-semibold py-1">
-                কপিরাইট © 2023{" "}
+                কপিরাইট-Betterlife365 © 2024{" "}
                 <span className="text-secondary">সর্বস্বত্ব সংরক্ষিত</span>
               </div>
             </div>

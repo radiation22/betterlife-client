@@ -21,7 +21,7 @@ const Blog1 = () => {
 
   return (
     <div className="px-8 py-10">
-      <h1 className="text-3xl">বিষন্নতা ()</h1>
+      <h1 className="text-3xl">উদ্বেগ (Aniexty)</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 gap-6">
         {blogs?.slice(0, 4).map((blog) => (
           <Link to={`/details/${blog._id}`} key={blog._id}>
@@ -37,17 +37,13 @@ const Blog1 = () => {
                 src={blog.imageUrl}
                 alt=""
               />
-              <div className="bg-[#2AB67D] rounded-b-lg p-4 text-white">
+              <div className="bg-[#2AB67D] h-[150px] rounded-b-lg p-4 text-white">
                 {/* <p className="text-gray-400 uppercase py-2">{blog.date}</p> */}
                 <h1 className="text-2xl py-2">{blog.title}</h1>
                 <p className="text-justify">
                   {blog.description.slice(0, 100)} ...
                 </p>
               </div>
-              {/* <div className="flex justify-between mt-2">
-                <FaEye />
-                <p>654</p>
-              </div> */}
             </div>
           </Link>
         ))}

@@ -46,7 +46,7 @@ const Counter = () => {
       <div className="">
         <div className=" w-[180px] mx-auto rounded-2xl flex flex-col items-center justify-center">
           <CountUp
-            className="text-4xl text-[#49164B] font-bold"
+            className="text-5xl text-[#49164B] font-bold"
             end={visits}
             duration={5}
           />
@@ -56,7 +56,7 @@ const Counter = () => {
       <div className="">
         <div className=" w-[180px] mx-auto rounded-2xl flex-col flex items-center justify-center">
           <CountUp
-            className="text-4xl text-[#49164B] font-bold"
+            className="text-5xl text-[#49164B] font-bold"
             end={500}
             duration={5}
           />

@@ -1,14 +1,30 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
+import { useQuery } from "@tanstack/react-query";
+import BlogModal from "./BlogModal";
 
 const AddBlog = () => {
   const { handleSubmit, control, register, watch } = useForm();
   const [selectedFile, setSelectedFile] = useState(null);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [blogs, setBlogs] = useState([]);
+  const [item, setItem] = useState({});
+
+  useEffect(() => {
+    // Fetch data from the URL
+    fetch("https://betterlife-server.vercel.app/blogs")
+      .then((response) => response.json())
+      .then((data) => {
+        setBlogs(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, [blogs]);
 
   const uploadImageToImgBB = async (imageFile) => {
     try {
@@ -61,7 +77,7 @@ const AddBlog = () => {
 
     console.log(property);
 
-    fetch("https://betterlife-server.vercel.app/addBlo", {
+    fetch("https://betterlife-server.vercel.app/addBlog", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(property),
@@ -73,6 +89,33 @@ const AddBlog = () => {
           navigate("/");
         }
       });
+  };
+
+  const handleDelete = (id) => {
+    const agree = window.confirm("Are you sure want to delete?");
+    if (agree) {
+      fetch(`https://betterlife-server.vercel.app/deleteBlog/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("Deleted successfully");
+            refetch();
+          }
+        });
+    }
+  };
+
+  const [showPositionModal, setShowPositionModal] = useState(false);
+
+  const handleCloseCommentModal = () => {
+    setShowPositionModal(false);
+  };
+
+  const handleEdit = (item) => {
+    setShowPositionModal(true);
+    setItem(item);
   };
 
   return (
@@ -192,6 +235,62 @@ const AddBlog = () => {
           </form>
         </div>
       </div>
+
+      <div>
+        <h1 className="text-4xl text-center py-5">All of your blogs</h1>
+        <table className="min-w-full border border-gray-300">
+          <thead className="bg-[#E6E5ED]">
+            <tr>
+              <th className="py-2 px-4 border-r">SL No</th>
+              <th className="py-2 px-4 border-r">Title</th>
+              <th className="py-2 px-4 border-r">Description</th>
+              <th className="py-2 px-4">Image Url</th>
+              <th className="py-2 px-4">Category</th>
+              <th className="py-2 px-4">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {blogs.map((blog, idx) => (
+              <tr
+                className={
+                  idx % 2 === 0
+                    ? "bg-white text-center"
+                    : "bg-[#F4F3F8] text-center"
+                }
+              >
+                <td className="py-2 px-4 border-r">{idx + 1}</td>
+                <td className="py-2 px-4 border-r">{blog?.title}</td>
+                <td className="py-2 px-4 border-r">
+                  {blog.description.slice(0, 100)}
+                </td>
+                <td className="py-2 px-4">{blog?.imageUrl}</td>
+                <td className="py-2 px-4">{blog?.category}</td>
+
+                <td className="py-2 px-4">
+                  <button
+                    onClick={() => handleEdit(blog)}
+                    className="bg-green-500 text-white rounded px-4 py-1 mr-1"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(blog._id)}
+                    className="bg-yellow-500 text-white rounded px-4 py-1"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {showPositionModal && (
+        <BlogModal
+          item={item}
+          handleCloseCommentModal={handleCloseCommentModal}
+        />
+      )}
     </div>
   );
 };

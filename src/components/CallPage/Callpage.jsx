@@ -75,7 +75,8 @@ const Callpage = () => {
           দৈনিক ৪ জন ফ্রী ভিজিট কল করতে পারবেন
         </h1>
         <h1 className="text-xl md:text-2xl text-[#49164B]">
-          আজকের দিনে সাক্ষাত করার সুযোগ আছে ৪ জন
+          আজকের দিনে সাক্ষাত করার সুযোগ আছে{" "}
+          <span className="bg-[#49164B] text-white p-1 rounded-md">০৪</span> জন
         </h1>
 
         {/* Form */}
@@ -87,7 +88,7 @@ const Callpage = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="border placeholder-white px-2 py-4 rounded-md bg-[#36C5F0] text-white"
+              className="border placeholder-white px-2 py-4 outline-green-700 rounded-md bg-[#36C5F0] text-white"
               placeholder="আপনার নাম"
               required
             />
@@ -101,7 +102,7 @@ const Callpage = () => {
                 name="age"
                 value={formData.age}
                 onChange={handleChange}
-                className="border placeholder-white w-full px-2 py-4 rounded-md bg-[#36C5F0] text-white"
+                className="border placeholder-white outline-green-700 w-full px-2 py-4 rounded-md bg-[#36C5F0] text-white"
                 placeholder="বয়স"
                 required
               />
@@ -114,7 +115,7 @@ const Callpage = () => {
                 name="number"
                 value={formData.number}
                 onChange={handleChange}
-                className="border placeholder-white px-2 w-full py-4 rounded-md bg-[#36C5F0] text-white"
+                className="border placeholder-white outline-green-700 px-2 w-full py-4 rounded-md bg-[#36C5F0] text-white"
                 placeholder="মোবাইল/Whatsapp No"
                 required
               />
@@ -127,7 +128,7 @@ const Callpage = () => {
               name="about"
               value={formData.about}
               onChange={handleChange}
-              className="border placeholder-white px-2 py-4 rounded-md bg-[#36C5F0] text-white"
+              className="border placeholder-white outline-green-700 px-2 py-4 rounded-md bg-[#36C5F0] text-white"
               placeholder="যে বিষয়ে কথা বলতে চাচ্ছেন"
               required
             />
@@ -136,21 +137,21 @@ const Callpage = () => {
             <button
               type="button"
               onClick={() => handleCallDurationClick("15 min")}
-              className="py-1 px-3 md:px-8 md:py-3 bg-[#37C837] text-white rounded-md"
+              className="py-1 px-3 md:px-10 md:py-3 bg-[#37C837] text-white rounded-md"
             >
               ১৫ মিনিট
             </button>
             <button
               type="button"
               onClick={() => handleCallDurationClick("30 min")}
-              className="py-1 px-3 md:px-8 md:py-3 bg-[#37C837] text-white rounded-md"
+              className="py-1 px-3 md:px-10 md:py-3 bg-[#37C837] text-white rounded-md"
             >
               ৩০ মিনিট
             </button>
             <button
               type="button"
               onClick={() => handleCallDurationClick("30+ min")}
-              className="py-1 px-3 md:px-8 md:py-3 bg-[#37C837] text-white rounded-md"
+              className="py-1 px-3 md:px-10 md:py-3 bg-[#37C837] text-white rounded-md"
             >
               ৩০+ মিনিট
             </button>

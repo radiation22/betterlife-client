@@ -35,8 +35,12 @@ export default function CardSlide() {
           768: { slidesPerView: 1, spaceBetween: 30 },
           1024: { slidesPerView: 1, spaceBetween: 30 },
         }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
         navigation={true}
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         spaceBetween={30}
         className="mySwiper"
       >
@@ -50,7 +54,7 @@ export default function CardSlide() {
                   alt=""
                 />
               </div>
-              <div className="w-full md:w-1/2 bg-[#36C5F0] text-white md:h-[280px] p-6 md:ms-[-90px]">
+              <div className="w-full md:w-1/2 bg-[#36C5F0] text-white md:h-[290px] p-6 md:ms-[-90px]">
                 <h1 className="text-3xl ">{blog.title}</h1>
                 <p>{blog.description.slice(0, 300)}</p>
                 <div className="flex justify-between">

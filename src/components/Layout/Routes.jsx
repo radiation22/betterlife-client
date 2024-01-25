@@ -60,19 +60,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/callPage",
-        element: (
-          <PrivateRoute>
-            <Callpage></Callpage>
-          </PrivateRoute>
-        ),
+        element: <Callpage></Callpage>,
       },
       {
         path: "/callSubmit",
-        element: (
-          <PrivateRoute>
-            <CallSubmit></CallSubmit>
-          </PrivateRoute>
-        ),
+        element: <CallSubmit></CallSubmit>,
       },
       {
         path: "/exhibition",

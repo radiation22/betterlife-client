@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div className=" py-10 md:px-5">
+    <div className="py-5 md:px-5">
       <div className="w-full">
         <Card></Card>
       </div>

@@ -8,7 +8,7 @@ const Faq = () => {
           সচরাচর জিজ্ঞাসা
         </p>
         <div className=" py-5 mt-8 px-3 md:px-20 faq-bg">
-          <div className="collapse collapse-plus  border bg-white shadow-md border-[#E01F5B]">
+          <div className="collapse collapse-plus  border-2 bg-white shadow-md border-[#E01F5B]">
             <input type="radio" name="my-accordion-3" />
             <div className="collapse-title text-xl font-medium">
               থেরাপিস্ট কারা?
@@ -29,7 +29,7 @@ const Faq = () => {
               </p>
             </div>
           </div>
-          <div className="collapse bg-white collapse-plus mt-2 border shadow-md border-[#E01F5B]">
+          <div className="collapse bg-white collapse-plus mt-2 border-2 shadow-md border-[#E01F5B]">
             <input type="radio" name="my-accordion-3" />
             <div className="collapse-title text-xl font-medium">
               কে আপনাকে সাহায্য করবে?
@@ -48,7 +48,7 @@ const Faq = () => {
               </p>
             </div>
           </div>
-          <div className="collapse bg-white collapse-plus mt-2 border shadow-md border-[#E01F5B]">
+          <div className="collapse bg-white collapse-plus mt-2 border-2 shadow-md border-[#E01F5B]">
             <input type="radio" name="my-accordion-3" />
             <div className="collapse-title text-xl font-medium">
               বেটারহেল্প কি আমার জন্য সঠিক?
@@ -68,7 +68,7 @@ const Faq = () => {
               </p>
             </div>
           </div>
-          <div className="collapse bg-white collapse-plus mt-2 border shadow-md border-[#E01F5B]">
+          <div className="collapse bg-white collapse-plus mt-2 border-2 shadow-md border-[#E01F5B]">
             <input type="radio" name="my-accordion-3" />
             <div className="collapse-title text-xl font-medium">
               আমি সাইন আপ করার পরে, কতক্ষণ পর্যন্ত আমি একজন থেরাপিস্টের সাথে
@@ -89,7 +89,7 @@ const Faq = () => {
               </p>
             </div>
           </div>
-          <div className="collapse bg-white collapse-plus mt-2 border shadow-md border-[#E01F5B]">
+          <div className="collapse bg-white collapse-plus mt-2 border-2 shadow-md border-[#E01F5B]">
             <input type="radio" name="my-accordion-3" />
             <div className="collapse-title text-xl font-medium">
               বেটারহেল্প কি আমার জন্য সঠিক?

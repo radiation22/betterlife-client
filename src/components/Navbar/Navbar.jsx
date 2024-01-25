@@ -31,14 +31,14 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link to="/">
-                <img className="h-[100px] " src={logo} alt="Logo" />
+                <img className="h-[60px] " src={logo} alt="Logo" />
               </Link>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {/* Add your menu items here */}
                 <Link
-                  className="text-white px-3 py-2 rounded-md  cursor-pointer font-medium"
+                  className="text-white px-3 py-2 rounded-md  cursor-pointer font-bold"
                   to="/" // Set the target element's name or ID
                   spy={true}
                   smooth={true}
@@ -47,7 +47,7 @@ const Navbar = () => {
                   হোম
                 </Link>
                 <Link
-                  className="text-white px-3 py-2  cursor-pointer font-medium"
+                  className="text-white px-3 py-2  cursor-pointer font-bold"
                   to="about" // Set the target element's name or ID
                   spy={true}
                   smooth={true}
@@ -56,7 +56,7 @@ const Navbar = () => {
                   আমাদের সর্ম্পকে
                 </Link>
                 <Link
-                  className="text-white px-3 py-2 cursor-pointer   font-medium"
+                  className="text-white px-3 py-2 cursor-pointer   font-bold"
                   to="exhibition" // Set the target element's name or ID
                   spy={true}
                   smooth={true}
@@ -65,7 +65,7 @@ const Navbar = () => {
                   ট্রিটমেন্ট
                 </Link>
                 <Link
-                  className="text-white px-3 cursor-pointer py-2 rounded-md  font-medium"
+                  className="text-white px-3 cursor-pointer py-2 rounded-md  font-bold"
                   to="blog" // Set the target element's name or ID
                   spy={true}
                   smooth={true}
@@ -74,7 +74,7 @@ const Navbar = () => {
                   ব্লগ
                 </Link>
                 <Link
-                  className="text-white px-3 cursor-pointer py-2 rounded-md  font-medium"
+                  className="text-white px-3 cursor-pointer py-2 rounded-md  font-bold"
                   to="faq" // Set the target element's name or ID
                   spy={true}
                   smooth={true}
@@ -83,7 +83,7 @@ const Navbar = () => {
                   জিজ্ঞাসা
                 </Link>
                 <Link
-                  className="text-white px-3 cursor-pointer py-2 rounded-md  font-medium"
+                  className="text-white px-3 cursor-pointer py-2 rounded-md  font-bold"
                   to="contact" // Set the target element's name or ID
                   spy={true}
                   smooth={true}

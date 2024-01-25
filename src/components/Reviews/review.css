@@ -2,6 +2,9 @@
     background-image: url('../../assets/r2.png');
     background-repeat: no-repeat;
     background-size: 100% auto;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
     background-position: center;
 }
 
@@ -14,6 +17,9 @@
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
 
 .swiper-button-prev::after {
