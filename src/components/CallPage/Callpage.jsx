@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import callbg from "../../assets/call (2).png";
+import { useNavigate } from "react-router-dom";
 
 const Callpage = () => {
   const [formData, setFormData] = useState({
@@ -10,9 +11,61 @@ const Callpage = () => {
     callDuration: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleCallDurationClick = async (duration) => {
+    if (
+      !formData.name ||
+      !formData.age ||
+      !formData.number ||
+      !formData.about
+    ) {
+      window.alert("Please fill in all input fields before submitting.");
+      return;
+    }
+
+    // Show confirmation alert
+    const confirmed = window.confirm(
+      "Are you sure you want to book with this duration?"
+    );
+    if (!confirmed) {
+      return; // If not confirmed, do nothing
+    }
+
+    // Update state
+    setFormData((prevData) => ({ ...prevData, callDuration: duration }));
+
+    // Submit form
+    try {
+      // Use the updated formData inside this block
+      const response = await fetch(
+        "https://betterlife-server.vercel.app/callBook",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        // Handle successful response, e.g., show a success message
+        console.log("Form data submitted successfully!");
+        navigate("/callSubmit");
+      } else {
+        // Handle error response
+        console.error("Error submitting form data:", response.statusText);
+      }
+    } catch (error) {
+      // Handle network or other errors
+      console.error("Error:", error.message);
+    }
   };
 
   return (
@@ -36,6 +89,7 @@ const Callpage = () => {
               onChange={handleChange}
               className="border placeholder-white px-2 py-4 rounded-md bg-[#36C5F0] text-white"
               placeholder="আপনার নাম"
+              required
             />
           </div>
 
@@ -49,6 +103,7 @@ const Callpage = () => {
                 onChange={handleChange}
                 className="border placeholder-white w-full px-2 py-4 rounded-md bg-[#36C5F0] text-white"
                 placeholder="বয়স"
+                required
               />
             </div>
 
@@ -61,6 +116,7 @@ const Callpage = () => {
                 onChange={handleChange}
                 className="border placeholder-white px-2 w-full py-4 rounded-md bg-[#36C5F0] text-white"
                 placeholder="মোবাইল/Whatsapp No"
+                required
               />
             </div>
           </div>
@@ -73,6 +129,7 @@ const Callpage = () => {
               onChange={handleChange}
               className="border placeholder-white px-2 py-4 rounded-md bg-[#36C5F0] text-white"
               placeholder="যে বিষয়ে কথা বলতে চাচ্ছেন"
+              required
             />
           </div>
           <div className="flex justify-between mb-4">
