@@ -1,5 +1,5 @@
 .swiper-button-next {
-    background-image: url('../../assets/rightarrow.png');
+    background-image: url('../../assets/r2.png');
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center;
@@ -10,7 +10,7 @@
 }
 
 .swiper-button-prev {
-    background-image: url('../../assets/leftarrow.jpg');
+    background-image: url('../../assets/l2.png');
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center;

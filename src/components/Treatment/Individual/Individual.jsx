@@ -13,19 +13,19 @@ const Individual = () => {
   // Questions and options
   const questions = [
     {
-      question: "Question 1: What is your Identity?",
+      question: "প্রশ্ন 1: আপনার পরিচয় কি?",
       options: ["Man", "Woman", "Others"],
     },
     {
-      question: "Question 2: What is your relationship Status?",
+      question: "প্রশ্ন 2: আপনার সম্পর্কের অবস্থা কি?",
       options: ["Single", "Married", "In a relationship", "Divorced", "Others"],
     },
     {
-      question: "Question 3: Have you ever been in therapy before?",
+      question: "প্রশ্ন 3: আপনি কি আগে কখনও থেরাপিতে ছিলেন?",
       options: ["Yes", "No"],
     },
     {
-      question: "Question 4: What led you to consider therapy today?",
+      question: "প্রশ্ন 4: কি আপনাকে আজ থেরাপি বিবেচনা করতে পরিচালিত করেছে?",
       options: [
         "Feeling depressed",
         "Feeling anxious and overwhelmed",
@@ -34,7 +34,7 @@ const Individual = () => {
       ],
     },
     {
-      question: "Question 5: What are your expectations from your therapist?",
+      question: "প্রশ্ন 5: আপনার থেরাপিস্ট থেকে আপনার প্রত্যাশা কি?",
       options: [
         "Explore my past",
         "Teaches me new skill",
@@ -110,35 +110,39 @@ const Individual = () => {
   };
 
   return (
-    <div className="px-16">
-      <h1 className="text-center mt-8 text-3xl">
-        Help us match you to the right therapist
-      </h1>
-      <p className="text-center">
-        It's important to have a therapist who you can establish a personal
-        connection with. The following questions are designed to match you to a
-        licensed therapist based on your therapy needs and personal preferences.
-      </p>
-      <div className="border shadow-md rounded-md p-10 w-full mx-auto mt-10 md:w-[50%]">
+    <div className="px-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="space-y-3">
+        <h1 className=" mt-8 text-2xl  text-[#451748] md:text-5xl">
+          আপনাকে সঠিক থেরাপিস্টের সাথে মেলাতে আমাদের সাহায্য করুন
+        </h1>
+        <p className="">
+          একজন থেরাপিস্ট থাকা গুরুত্বপূর্ণ যার সাথে আপনি একটি ব্যক্তিগত সংযোগ
+          স্থাপন করতে পারেন। নিম্নলিখিত প্রশ্নগুলি আপনার থেরাপির চাহিদা এবং
+          ব্যক্তিগত পছন্দগুলির উপর ভিত্তি করে আপনাকে লাইসেন্সপ্রাপ্ত থেরাপিস্টের
+          সাথে মেলে দেওয়ার জন্য ডিজাইন করা হয়েছে।
+        </p>
+      </div>
+      <div className="border border-l-8 border-[#30C8E6] shadow-md rounded-md p-10 w-full  mt-10 ">
         {/* Progress Indicator */}
         <div className="relative mb-5">
           <div
-            className="h-2 bg-[#397A4A] rounded-full"
+            className="h-2 bg-[#30C8E6] rounded-full"
             style={{ width: calculateRangeWidth() }}
           ></div>
         </div>
 
         {/* Current Question */}
-        <h2 className="text-2xl font-bold mt-8">
+        <h2 className="text-3xl text-[#CC255D] mt-8">
           {questions[currentQuestion].question}
         </h2>
 
         {/* Options */}
         <ul>
           {questions[currentQuestion].options.map((option, index) => (
-            <li className="text-xl" key={index}>
+            <li className="text-xl ps-2" key={index}>
               <label>
                 <input
+                  className="m-3"
                   type="radio"
                   name="option"
                   value={option}
@@ -152,12 +156,14 @@ const Individual = () => {
         </ul>
 
         {/* Next/Submit Button */}
-        <button
-          className="px-6 py-1 text-white rounded-full w-full mt-5 bg-[#397A4A]"
-          onClick={handleButtonClick}
-        >
-          {currentQuestion < questions.length - 1 ? "Next" : "Submit"}
-        </button>
+        <div className="text-right">
+          <button
+            className="px-6 py-1 text-white rounded-full  mt-5 bg-[#2FC6EC]"
+            onClick={handleButtonClick}
+          >
+            {currentQuestion < questions.length - 1 ? "Next" : "Submit"}
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,7 @@
+.count-bg {
+    background-image: url(../../assets/count.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+
+}

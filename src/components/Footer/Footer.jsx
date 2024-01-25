@@ -20,7 +20,7 @@ const Footer = () => {
     console.log("Opening messenger chat...");
   };
   return (
-    <div className="w-full mt-20 pt-10 bg-[#49164B]">
+    <div className="w-full pt-10 bg-[#49164B]">
       <footer className=" pt-8 pb-6">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-left lg:text-left">

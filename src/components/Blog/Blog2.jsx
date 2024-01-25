@@ -53,7 +53,7 @@ const Blog2 = () => {
       </div>
 
       <div className="text-center mt-10">
-        <button className="bg-[#1793CE] text-white px-5 py-2 my-5 rounded-lg">
+        <button className="bg-[#3AC6EF] text-white px-5 py-2 my-5 rounded-lg">
           <Link to="/blog">Read More</Link>
         </button>
       </div>

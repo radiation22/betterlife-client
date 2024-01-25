@@ -1,5 +1,6 @@
 import React from "react";
 import "./offer.css";
+import { Link } from "react-router-dom";
 
 const Offer = () => {
   return (
@@ -10,9 +11,11 @@ const Offer = () => {
         <p className="text-xl md:text-2xl ">
           আপনার আত্নবিশ্বাস এবং সুস্থ মানসিকতার দিকে একটি নতুন দিকে চলুন
         </p>
-        <button className="bg-[#3AC6EF] uppercase px-4 py-1 rounded-md">
-          What We Offer
-        </button>
+        <Link to="/callPage">
+          <button className="bg-[#3AC6EF] uppercase px-4 mt-4 py-1 rounded-md">
+            কল সেশন বুক করুন
+          </button>
+        </Link>
       </div>
     </div>
   );

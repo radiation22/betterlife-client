@@ -1,5 +1,5 @@
 import React from "react";
-import giftimg from "../../assets/give-gift.png";
+import giftimg from "../../assets/gift (2).png";
 const Gift = () => {
   return (
     <div className="flex my-5 flex-col md:flex-row justify-center items-center px-4 md:px-20">

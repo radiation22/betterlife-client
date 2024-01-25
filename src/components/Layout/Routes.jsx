@@ -16,6 +16,9 @@ import Baby from "../Treatment/Baby/Baby";
 import Partner from "../Treatment/Partner/Partner";
 import Faq from "../Faq/Faq";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Counsil from "../Counseling/Counsil";
+import Callpage from "../CallPage/Callpage";
+import CallSubmit from "../CallPage/CallSubmit";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +55,30 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Individual></Individual>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/callPage",
+        element: (
+          <PrivateRoute>
+            <Callpage></Callpage>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/callSubmit",
+        element: (
+          <PrivateRoute>
+            <CallSubmit></CallSubmit>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/exhibition",
+        element: (
+          <PrivateRoute>
+            <Counsil></Counsil>
           </PrivateRoute>
         ),
       },
