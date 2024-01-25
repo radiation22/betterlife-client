@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`bg-[#325343] ${isMenuOpen ? "open" : ""} `}>
+    <nav className={`bg-[#49164B] ${isMenuOpen ? "open" : ""} `}>
       <div className="flex items-center mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center">
@@ -147,7 +147,7 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
-            <div className="bg-white text-lg px-6 rounded-full py-2 text-black font-bold ml-4">
+            <div className="bg-[#EBB228] text-lg px-6 rounded-full py-2 text-white font-bold ml-4">
               {user?.email ? (
                 <button onClick={handleSignOut}>সাইন আউট</button>
               ) : (

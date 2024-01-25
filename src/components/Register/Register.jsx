@@ -3,13 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
-
-import logo from "../../assets/better life logo.png";
-
 import { toast } from "react-toastify";
 import { FaAngleRight, FaEnvelope, FaLock } from "react-icons/fa";
-// import userPlus from "../../assets/userplus.png";
-// import question from "../../assets/question.png";
 import Loader from "../Loader/Loader"; // Import the Loader component
 
 const Register = () => {

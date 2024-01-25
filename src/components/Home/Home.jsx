@@ -16,16 +16,21 @@ import Gift from "../Gift/Gift";
 import Reviews from "../Reviews/Reviews";
 import Counter from "../Counter/Counter";
 import CountVisit from "../CountVisit/CountVisit";
+import Counsil from "../Counseling/Counsil";
+import Offer from "../Offer/Offer";
 
 const Home = () => {
   return (
     <div className="">
       <Banner></Banner>
+      <Counsil></Counsil>
       <Blog1></Blog1>
       <Blog2></Blog2>
-      <Reviews></Reviews>
-      <Faq></Faq>
+      <Offer></Offer>
       <Gift></Gift>
+      <Faq></Faq>
+      <Reviews></Reviews>
+
       <Counter></Counter>
 
       <div className="">

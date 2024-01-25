@@ -42,24 +42,30 @@ export default function CardSlide() {
       >
         {blogs.map((blog) => (
           <SwiperSlide className="">
-            <div style={{}} className="p-5 border  rounded shadow">
-              <img
-                className="h-[220px] md:h-[300px] w-full"
-                src={blog.imageUrl}
-                alt=""
-              />
-              <div className="flex justify-between">
-                <p className="text-gray-400 py-2">{blog.date}</p>
-                <p className="text-gray-400 py-2 uppercase">{blog.category}</p>
+            <div className="md:flex items-center">
+              <div className="w-full md:w-1/2 md:ps-10">
+                <img
+                  className="h-[200px] md:h-[380px] w-full"
+                  src={blog.imageUrl}
+                  alt=""
+                />
               </div>
-              <h1 className="text-3xl ">{blog.title}</h1>
-              <p>{blog.description.slice(0, 100)}</p>
-              <Link to="/blog">
-                {" "}
-                <button className="bg-[#1793CE] text-white px-4 my-5 py-1 rounded-lg">
-                  Read More
-                </button>
-              </Link>
+              <div className="w-full md:w-1/2 bg-[#36C5F0] text-white md:h-[280px] p-6 md:ms-[-90px]">
+                <h1 className="text-3xl ">{blog.title}</h1>
+                <p>{blog.description.slice(0, 300)}</p>
+                <div className="flex justify-between">
+                  <p className="text-[#49164B] py-2">{blog.date}</p>
+                  <p className="text-[#49164B] py-2 uppercase">
+                    {blog.category}
+                  </p>
+                </div>
+                <Link to="/blog">
+                  {" "}
+                  <button className="bg-[#EBB228] text-white px-4 my-5 py-1 rounded-lg">
+                    Read More
+                  </button>
+                </Link>
+              </div>
             </div>
           </SwiperSlide>
         ))}

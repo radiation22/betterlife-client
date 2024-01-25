@@ -41,18 +41,16 @@ const Counter = () => {
     incrementVisit();
   }, []);
   return (
-    <div className="grid grid-cols-2 gap-10 py-10">
+    <div className="flex justify-end gap-10 md:px-16 py-10">
       <div className="">
-        <div className="bg-[#66B845] h-[180px] w-[180px] mx-auto rounded-2xl flex flex-col items-center justify-center">
-          <img src={avt1} alt="" />
-          <CountUp className="text-white text-4xl" end={visits} duration={5} />
+        <div className=" w-[180px] mx-auto rounded-2xl flex flex-col items-center justify-center">
+          <CountUp className="text-4xl" end={visits} duration={5} />
         </div>
         <h1 className="text-center text-2xl mt-3">আমাদের নিয়মিত পাঠক</h1>
       </div>
       <div className="">
-        <div className="bg-[#66B845] h-[180px] w-[180px] mx-auto rounded-2xl flex-col flex items-center justify-center">
-          <img src={avt1} alt="" />
-          <CountUp className="text-white text-4xl" end={400} duration={5} />
+        <div className=" w-[180px] mx-auto rounded-2xl flex-col flex items-center justify-center">
+          <CountUp className="text-4xl" end={500} duration={5} />
         </div>
         <h1 className="text-center text-2xl mt-3 ">
           আমাদের রেজিস্ট্রেশনকৃত সদস্য সংখ্যা

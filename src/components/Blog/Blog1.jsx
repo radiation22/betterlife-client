@@ -20,9 +20,9 @@ const Blog1 = () => {
   }, [blogs]);
 
   return (
-    <div className="px-8">
-      <h1 className="text-3xl">Anxiety</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-5 gap-5">
+    <div className="px-8 py-10">
+      <h1 className="text-3xl">বিষন্নতা ()</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 gap-6">
         {blogs?.slice(0, 4).map((blog) => (
           <Link to={`/details/${blog._id}`} key={blog._id}>
             <div
@@ -30,18 +30,24 @@ const Blog1 = () => {
                 boxShadow:
                   "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
               }}
-              className="border rounded-md p-4 hover:bg-gray-200"
+              className="border rounded-lg hover:bg-gray-200"
             >
-              <img src={blog.imageUrl} alt="" />
-              <p className="text-gray-400 uppercase py-2">{blog.date}</p>
-              <h1 className="text-2xl py-2">{blog.title}</h1>
-              <p className="text-justify">
-                {blog.description.slice(0, 100)} ...
-              </p>
-              <div className="flex justify-between mt-2">
+              <img
+                className="rounded-t-lg h-[190px] w-full"
+                src={blog.imageUrl}
+                alt=""
+              />
+              <div className="bg-[#2AB67D] rounded-b-lg p-4 text-white">
+                {/* <p className="text-gray-400 uppercase py-2">{blog.date}</p> */}
+                <h1 className="text-2xl py-2">{blog.title}</h1>
+                <p className="text-justify">
+                  {blog.description.slice(0, 100)} ...
+                </p>
+              </div>
+              {/* <div className="flex justify-between mt-2">
                 <FaEye />
                 <p>654</p>
-              </div>
+              </div> */}
             </div>
           </Link>
         ))}
